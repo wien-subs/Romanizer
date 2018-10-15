@@ -6,11 +6,12 @@ local tr = aegisub.gettext
 script_name = tr"Romanizer"
 script_description = tr"Replace old diacritics with new one"
 script_author = "Fmohican"
-script_version = "1"
+script_version = "1.0.1"
 
 function romanizer(subs, sel)
     for _, i in ipairs(sel) do
         local line = subs[i]
+        line.text = line.text:gsub("ş", "ț") --Found this in some subs, maybe will help maybe not.
         line.text = line.text:gsub("Þ", "Ț")
         line.text = line.text:gsub("º", "ș")
         line.text = line.text:gsub("þ", "ț")
