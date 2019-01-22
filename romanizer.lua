@@ -37,24 +37,16 @@ end
 function legacy(subs, sel)
     for _, i in ipairs(sel) do
         local line = subs[i]
-        line.text = line.text:gsub("ş", "ț") --Found this in some subs, maybe will help maybe not.
-        line.text = line.text:gsub("Þ", "Ț")
-        line.text = line.text:gsub("º", "ș")
-        line.text = line.text:gsub("þ", "ț")
-        line.text = line.text:gsub("ª", "Ș")
-        line.text = line.text:gsub("ã", "ă")
-        line.text = line.text:gsub("Ã", "Ă")
-		--2nd set of non romanian diacritics
 		line.text = line.text:gsub("ă", "ă")
-		line.text = line.text:gsub("î", "î")
-		line.text = line.text:gsub("ş", "ș")
-		line.text = line.text:gsub("ţ", "ț")
-		line.text = line.text:gsub("â", "â")
 		line.text = line.text:gsub("Ă", "Ă")
-		line.text = line.text:gsub("Î", "Î")
-		line.text = line.text:gsub("Ş", "Ș")
-		line.text = line.text:gsub("Ţ", "Ț")
+		line.text = line.text:gsub("â", "â")
 		line.text = line.text:gsub("Â", "Â")
+		line.text = line.text:gsub("ţ", "ț")
+		line.text = line.text:gsub("Ţ", "Ț")
+		line.text = line.text:gsub("î", "î")
+		line.text = line.text:gsub("Î", "Î")
+		line.text = line.text:gsub("ş", "ș")
+		line.text = line.text:gsub("Ş", "Ș")
         subs[i] = line
     end
     aegisub.set_undo_point(tr"Romanizer Legacy -> Standard")
